@@ -29,10 +29,17 @@ class asignacionController {
         return asignacionService.update(asignacionTabla)
     }
 
+    @PatchMapping
+    fun updateDescription (@RequestBody asignacionTabla: asignacionTabla):asignacionTabla{
+        return asignacionService.updateDescription(asignacionTabla)
+    }
+
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean{
         return asignacionService.delete(id)
     }
+
+
 
 
 

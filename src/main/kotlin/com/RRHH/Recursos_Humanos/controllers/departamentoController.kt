@@ -3,6 +3,7 @@ package com.RRHH.Recursos_Humanos.controllers
 import com.RRHH.Recursos_Humanos.model.asignacionTabla
 import com.RRHH.Recursos_Humanos.model.departamentoTabla
 import com.RRHH.Recursos_Humanos.model.empleadosTabla
+import com.RRHH.Recursos_Humanos.repository.departamentoRepository
 import com.RRHH.Recursos_Humanos.service.asignacionService
 import com.RRHH.Recursos_Humanos.service.departamentoService
 import com.RRHH.Recursos_Humanos.service.empleadosService
@@ -29,6 +30,11 @@ class departamentoController {
     @PutMapping
     fun update (@RequestBody departamentoTabla: departamentoTabla):departamentoTabla{
         return departamentoService.update(departamentoTabla)
+    }
+
+    @PatchMapping
+    fun updateDescription (@RequestBody departamentoTabla: departamentoTabla):departamentoTabla{
+        return departamentoService.updateDescription(departamentoTabla)
     }
 
     @DeleteMapping("/delete/{id}")

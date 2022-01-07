@@ -5,5 +5,6 @@ import com.RRHH.Recursos_Humanos.model.empleadosTabla
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface asignacionRepository:JpaRepository<asignacionTabla,Long> {
+    fun findById(id: Long?): asignacionTabla?
 
 }

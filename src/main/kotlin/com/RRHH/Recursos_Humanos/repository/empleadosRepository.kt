@@ -4,5 +4,5 @@ import com.RRHH.Recursos_Humanos.model.empleadosTabla
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface empleadosRepository:JpaRepository<empleadosTabla,Long> {
-
+    fun findById(id: Long?): empleadosTabla?
 }

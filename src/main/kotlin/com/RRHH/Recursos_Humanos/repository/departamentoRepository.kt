@@ -4,5 +4,5 @@ import com.RRHH.Recursos_Humanos.model.departamentoTabla
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface departamentoRepository:JpaRepository<departamentoTabla,Long> {
-
+    fun findById(id: Long?): departamentoTabla?
 }

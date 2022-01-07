@@ -1,5 +1,6 @@
 package com.RRHH.Recursos_Humanos.controllers
 
+import com.RRHH.Recursos_Humanos.model.asignacionTabla
 import com.RRHH.Recursos_Humanos.model.empleadosTabla
 import com.RRHH.Recursos_Humanos.service.empleadosService
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,6 +26,11 @@ class empleadosController {
     @PutMapping
     fun update (@RequestBody empleadosTabla: empleadosTabla):empleadosTabla{
         return empleadosService.update(empleadosTabla)
+    }
+
+    @PatchMapping
+    fun updateDescription (@RequestBody empleadosTabla: empleadosTabla): empleadosTabla {
+        return empleadosService.updateDescription(empleadosTabla)
     }
 
     @DeleteMapping("/delete/{id}")

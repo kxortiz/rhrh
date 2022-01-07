@@ -13,10 +13,9 @@ CREATE TABLE IF NOT EXISTS  asignacion
     (id serial,
      fecha VARCHAR(45) NOT NULL,
     observacion VARCHAR(45) NOT NULL,
-
-
     PRIMARY KEY (id)
     );
+
 
 CREATE TABLE IF NOT EXISTS  departamento
     (id serial,
