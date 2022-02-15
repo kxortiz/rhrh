@@ -71,6 +71,11 @@ class empleadosService {
 
     fun delete (id:Long): Boolean{
         empleadosRepository.deleteById(id)
+
         return true
+    }
+
+    fun get (id:Long): empleadosTabla{
+        return empleadosRepository.getById(id)
     }
 }

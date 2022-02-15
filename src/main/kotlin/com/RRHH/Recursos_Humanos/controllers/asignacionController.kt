@@ -1,6 +1,7 @@
 package com.RRHH.Recursos_Humanos.controllers
 
 import com.RRHH.Recursos_Humanos.model.asignacionTabla
+import com.RRHH.Recursos_Humanos.model.departamentoTabla
 import com.RRHH.Recursos_Humanos.model.empleadosTabla
 import com.RRHH.Recursos_Humanos.service.asignacionService
 import com.RRHH.Recursos_Humanos.service.empleadosService
@@ -37,6 +38,11 @@ class asignacionController {
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean{
         return asignacionService.delete(id)
+    }
+
+    @GetMapping("/{id}")
+    fun get (@PathVariable("id") id: Long): asignacionTabla {
+        return asignacionService.get(id)
     }
 
 

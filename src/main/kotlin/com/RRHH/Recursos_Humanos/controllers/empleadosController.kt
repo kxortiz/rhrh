@@ -1,6 +1,7 @@
 package com.RRHH.Recursos_Humanos.controllers
 
 import com.RRHH.Recursos_Humanos.model.asignacionTabla
+import com.RRHH.Recursos_Humanos.model.departamentoTabla
 import com.RRHH.Recursos_Humanos.model.empleadosTabla
 import com.RRHH.Recursos_Humanos.service.empleadosService
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,6 +19,8 @@ class empleadosController {
     fun list(): List<empleadosTabla>{
         return empleadosService.list()
     }
+
+
     @PostMapping
     fun save(@RequestBody empleadosTabla: empleadosTabla):empleadosTabla{
         return empleadosService.save(empleadosTabla)
@@ -36,8 +39,11 @@ class empleadosController {
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean{
         return empleadosService.delete(id)
+
     }
-
-
+    @GetMapping("/{id}")
+    fun get (@PathVariable("id") id: Long):empleadosTabla{
+        return empleadosService.get(id)
+    }
 
 }

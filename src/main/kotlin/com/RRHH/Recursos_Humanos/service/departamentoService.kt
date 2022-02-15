@@ -64,4 +64,8 @@ class departamentoService {
         departamentoRepository.deleteById(id)
         return true
     }
+
+    fun get (id:Long): departamentoTabla{
+        return departamentoRepository.getById(id)
+    }
 }

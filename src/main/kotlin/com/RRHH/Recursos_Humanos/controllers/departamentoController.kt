@@ -41,7 +41,10 @@ class departamentoController {
     fun delete (@PathVariable("id") id: Long):Boolean{
         return departamentoService.delete(id)
     }
-
+    @GetMapping("/{id}")
+    fun get (@PathVariable("id") id: Long):departamentoTabla{
+        return departamentoService.get(id)
+    }
 
 
 }

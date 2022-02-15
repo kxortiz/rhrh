@@ -1,6 +1,7 @@
 package com.RRHH.Recursos_Humanos.service
 
 import com.RRHH.Recursos_Humanos.model.asignacionTabla
+import com.RRHH.Recursos_Humanos.model.departamentoTabla
 import com.RRHH.Recursos_Humanos.model.empleadosTabla
 import com.RRHH.Recursos_Humanos.repository.asignacionRepository
 import com.RRHH.Recursos_Humanos.repository.empleadosRepository
@@ -65,5 +66,9 @@ class asignacionService {
     fun delete (id:Long): Boolean{
         asignacionRepository.deleteById(id)
         return true
+    }
+
+    fun get (id:Long): asignacionTabla {
+        return asignacionRepository.getById(id)
     }
 }
